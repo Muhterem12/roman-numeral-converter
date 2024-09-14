@@ -1,4 +1,8 @@
-"use script";
+'use script';
+
+const input = document.getElementById('number');
+const btn = document.getElementById('convert-btn');
+const output = document.getElementById('output');
 
 const romanNumbers = {
   M: 1000,
@@ -15,3 +19,15 @@ const romanNumbers = {
   IV: 4,
   I: 1,
 };
+
+const x = 3;
+
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') output.click();
+});
+
+output.addEventListener('click', () => {
+  const value = input.value;
+
+  if (!value) output.innerText = 'Please enter a valid number';
+});
