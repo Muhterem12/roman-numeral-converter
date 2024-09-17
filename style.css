@@ -26,7 +26,12 @@ body {
   margin-right: 10px;
   margin-left: 10px;
 }
-input[type="number"] {
+
+.hidden {
+  display: none;
+}
+
+input[type='number'] {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
@@ -56,12 +61,12 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-#output {
+/* #output {
   margin-top: 15px;
   font-size: 1.2em;
   color: #333;
   visibility: hidden;
-}
+} */
 @media (max-width: 480px) {
   .container {
     padding: 15px;
