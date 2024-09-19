@@ -26,28 +26,26 @@ input.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') output.click();
 });
 
-btn.addEventListener('click', () => {
-  const value = input.value;
-
-  if (!value) output.innerText = 'Please enter a valid number';
-  console.log('success1');
-});
-
 // console.log(Object.keys(romanNumbers));
 
-btn.addEventListener('click', (e) => {
-  for (let i of Object.keys(romanNumbers)) {
-    // console.log(romanNumbers);
+let str = '';
 
-    const cur = input.value;
-    converter(cur);
+const converter = function () {
+  btn.addEventListener('click', (e) => {
+    let cur = input.value;
+    if (!cur) output.innerText = 'Please enter a valid number';
 
-    console.log(romanNumbers[i]);
-    console.log(i);
-    console.log('success2');
-  }
-});
+    for (let i of Object.keys(romanNumbers)) {
+      // * romanNumbers[i] // normal number
+      // * i // roman number
 
-const converter = function (num) {
-  console.log(num);
+      let q = Math.floor(cur / romanNumbers[i]);
+      cur = -cur * q;
+      str = str + i.repeat(q);
+    }
+
+    return str;
+  });
 };
+
+console.log(converter());
