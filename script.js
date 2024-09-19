@@ -1,4 +1,4 @@
-'use script';
+'use strict';
 
 const input = document.getElementById('number');
 const btn = document.getElementById('convert-btn');
@@ -32,20 +32,23 @@ let str = '';
 
 const converter = function () {
   btn.addEventListener('click', (e) => {
+    str = '';
     let cur = input.value;
-    if (!cur) output.innerText = 'Please enter a valid number';
+    if (!cur) {
+      output.innerText = 'Please enter a valid number';
+    }
 
     for (let i of Object.keys(romanNumbers)) {
       // * romanNumbers[i] // normal number
       // * i // roman number
 
       let q = Math.floor(cur / romanNumbers[i]);
-      cur = -cur * q;
+      cur = cur - q * romanNumbers[i];
       str = str + i.repeat(q);
     }
-
-    return str;
+    console.log(str);
   });
+  return str;
 };
-
 console.log(converter());
+output.innerText = converter();
