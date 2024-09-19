@@ -34,9 +34,6 @@ const converter = function () {
   btn.addEventListener('click', (e) => {
     str = '';
     let cur = input.value;
-    if (!cur) {
-      output.innerText = 'Please enter a valid number';
-    }
 
     for (let i of Object.keys(romanNumbers)) {
       // * romanNumbers[i] // normal number
@@ -51,4 +48,13 @@ const converter = function () {
   return str;
 };
 console.log(converter());
-output.innerText = converter();
+
+btn.addEventListener('click', (e) => {
+  let cur2 = input.value;
+
+  if (!cur2) {
+    output.innerText = 'Please enter a valid number';
+  } else {
+    output.innerText = converter();
+  }
+});

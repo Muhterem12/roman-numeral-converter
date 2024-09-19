@@ -1,4 +1,7 @@
 body {
+  transform: scale(1.2); /* Scale to 120% */
+  /* transform-origin: top left;  */
+
   /* font-family: Arial, sans-serif; */
   font-family: monospace;
   display: flex;
